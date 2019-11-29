@@ -28,3 +28,4 @@ chromium-browser https://google.com &
 sleep 5s
 
 echo "First boot ended gracefully"
+sudo reboot

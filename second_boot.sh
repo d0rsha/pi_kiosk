@@ -18,7 +18,7 @@ sudo systemctl status kiosk | cat
 # Setup splash
 sudo cp -f splash.png /home/pi/splash.png
 sudo chmod +x splash.sh
-./splash.sh
+sudo ./splash.sh
 
 # Setup background 
 sudo cp -f background.png /home/pi/background.png
@@ -31,4 +31,4 @@ sudo cp -f before_image.sh /home/pi/after_image.sh
 sudo chmod +x /home/pi/after_image.sh
 
 # ReBoot
-reboot
+sudo reboot
