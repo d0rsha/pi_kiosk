@@ -1,4 +1,9 @@
 #!/bin/bash
+xset s noblank
+xset s off
+xset -dpms
+
+unclutter -idle 0.5 -root &
 
 #############
 ## Spinner ##
@@ -7,6 +12,7 @@ sping[1]="\\ Waiting for network.  "
 sping[2]="| Waiting for network.. "
 sping[3]="/ Waiting for network..."
 #############
+
 while ! timeout 0.2 ping -c 1 -n google.com &> /dev/null; do
 for i in "${sping[@]}"
 do
