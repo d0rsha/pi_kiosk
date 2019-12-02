@@ -1,9 +1,10 @@
 [Unit]
-Description=test
+Description=Timer triggers ngulia-check-network daemon
 
 [Timer]
 OnBootSec=2m
 OnUnitActiveSec=1m
+unit=ngulia-check-network.service
 
 [Install]
 WantedBy=timers.target

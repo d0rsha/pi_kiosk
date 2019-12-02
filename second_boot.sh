@@ -12,8 +12,6 @@ sudo chmod +x /home/pi/ping.sh
 sudo systemctl stop ngulia-kiosk 
 sudo systemctl disable ngulia-kiosk 
 sudo systemctl enable ngulia-kiosk 
-sudo systemctl status ngulia-kiosk | cat
-# sudo systemctl start ngulia-kiosk &
 
 # Setup splash
 sudo cp -f scripts/splash.png /home/pi/splash.png
@@ -35,6 +33,7 @@ sudo chmod +x /home/pi/after_image.sh
 ## Setup spinner service 
 
 # Spinner
+sudo cp -f spinner/* /home/pi/Pictures/spinner/
 sudo cp -f scripts/spinner.sh /home/pi/spinner.sh
 sudo chmod +x /home/pi/spinner.sh
 sudo cp -f systemd-services/ngulia-spinner.service /lib/systemd/system/ngulia-spinner.service

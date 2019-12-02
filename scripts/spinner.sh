@@ -12,5 +12,5 @@ X2=$(expr $X / 2 + 150)
 Y1=$(expr $Y / 2 - 75)
 Y2=$(expr $Y / 2 + 75)
 
-echo "Running command: FBpyGIF Pictures/ -sd 0.5 -w $X1,$Y1,$X2,$Y2"
-FBpyGIF Pictures/ -sd 0.5 -w $X1,$Y1,$X2,$Y2
+echo "Running command: FBpyGIF Pictures/spinner/ -sd 0.5 -w $X1,$Y1,$X2,$Y2"
+FBpyGIF Pictures/spinner -sd 0.5 -w $X1,$Y1,$X2,$Y2

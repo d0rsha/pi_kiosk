@@ -48,6 +48,4 @@ ngulia-spinner.sh
 ngulia-check-network.sh
 
 
-# Rename kiosk -> ngulia-kiosk
-# Rename kioks.sh -> ngulia-kiosk.sh
 ```
