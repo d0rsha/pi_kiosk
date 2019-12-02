@@ -45,6 +45,8 @@ sudo chmod +x /home/pi/check-network.sh
 sudo cp -f systemd-services/ngulia-check-network.service /lib/systemd/system/ngulia-check-network.service
 sudo cp -f systemd-services/ngulia-check-network.timer /lib/systemd/system/ngulia-check-network.timer
 #sudo systemctl enable ngulia-spinner (?)
+sudo systemctl stop ngulia-check-network.timer
+sudo systemctl disable ngulia-check-network.timer
 sudo systemctl enable ngulia-check-network.timer
 
 # ReBoot
