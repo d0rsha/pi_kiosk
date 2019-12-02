@@ -1,7 +1,7 @@
 # system Daemon file
-# This file should be located in /lib/systemd/system/kiosk.service
+# This file should be located in /lib/systemd/system/ngulia-kiosk.service
 [Unit]
-Description=Chromium Kiosk background daemon
+Description=Chromium Kiosk daemon
 Wants=graphical.target
 After=graphical.target
 
@@ -9,7 +9,7 @@ After=graphical.target
 Environment=DISPLAY=:0
 Environment=XAUTHORITY=/home/pi/.Xauthority
 Type=simple
-ExecStartPre=/usr/bin/lxterminal -t "Chromium Kiosk systemd" -e /home/pi/ping.sh
+ExecStartPre=/usr/bin/lxterminal -t "Chromium Kiosk daemon" -e /home/pi/ping.sh
 ExecStart=/bin/bash /home/pi/kiosk.sh
 Restart=always
 RestartSec=3

@@ -1,0 +1,14 @@
+# system Daemon file
+[Unit]
+Description=Check if network available byt pinging google.com
+
+[Service]
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/pi/.Xauthority
+Type=simple
+ExecStart=/bin/bash /home/pi/check-network.sh
+User=pi
+Group=pi
+
+[Install]
+WantedBy=graphical.target

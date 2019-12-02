@@ -3,8 +3,6 @@ xset s noblank
 xset s off
 xset -dpms
 
-unclutter -idle 0.5 -root &
-
 #############
 ## Spinner ##
 sping[0]="- Waiting for network   "
