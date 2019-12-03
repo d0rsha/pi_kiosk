@@ -18,6 +18,8 @@ sudo raspi-config
 2. On first boot ensure WiFi / ethernet connection is established
 3. Run first_boot.sh
 ```bash
+git clone https://github.com/d0rsha/pi_kiosk.git
+cd pi_kiosk
 sudo chmod +x first_boot.sh
 sudo ./first_boot.sh
 # Check that all went well(?), reboot manually
