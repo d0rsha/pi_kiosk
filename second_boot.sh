@@ -14,7 +14,7 @@ sudo systemctl disable ngulia-kiosk
 sudo systemctl enable ngulia-kiosk 
 
 # Setup splash
-sudo cp -f scripts/splash.png /home/pi/splash.png
+sudo cp -f splash.png /home/pi/splash.png
 sudo chmod +x scripts/splash.sh
 sudo ./scripts/splash.sh
 
@@ -36,7 +36,8 @@ sudo chmod +x /home/pi/after_image.sh
 sudo cp -f spinner/* /home/pi/Pictures/spinner/
 sudo cp -f scripts/spinner.sh /home/pi/spinner.sh
 sudo chmod +x /home/pi/spinner.sh
-sudo cp -f systemd-services/ngulia-spinner.service /lib/systemd/system/ngulia-spinner.service
+mkdir -p ~/.config/systemd/user
+cp -f systemd-services/ngulia-spinner.service ~/.config/systemd/user/ngulia-spinner.service
 #sudo systemctl enable ngulia-spinner (?)
 
 # Check-network
@@ -53,4 +54,4 @@ sudo cp -f scripts/light-ping.sh /home/pi/light-ping.sh
 sudo chmod +x /home/pi/light-ping.sh
 
 # ReBoot
-#sudo reboot
+sudo reboot

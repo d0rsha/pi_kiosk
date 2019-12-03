@@ -3,11 +3,10 @@
 Description=Display spinner on screen
 
 [Service]
-#Environment=DISPLAY=:0
-#Environment=XAUTHORITY=/home/pi/.Xauthority
 Type=simple
 ExecStart=/bin/bash /home/pi/spinner.sh
-
+User=pi
+Group=pi
 
 [Install]
 WantedBy=graphical.target
