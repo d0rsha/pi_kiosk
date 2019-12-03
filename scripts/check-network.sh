@@ -9,6 +9,8 @@ if [ "$RES" -eq "0" ]; then
 else 
     echo "<check-network.sh> Network not available"
     systemctl start ngulia-spinner
-    /home/pi/light-ping.sh
+    ./home/pi/light-ping.sh
     systemctl stop ngulia-spinner
+    xdotool search --name " - Chromium" windowactivate %1 && sleep 0.5s && xdotool keydown ctrl+F5 && xdotool keyup ctrl+F5
 fi
+

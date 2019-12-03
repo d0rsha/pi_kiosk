@@ -12,7 +12,7 @@ while ! timeout 0.2 ping -c 1 -n google.com &> /dev/null; do
 for i in "${sping[@]}"
 do
     echo -ne "\r$i"
-    sleep 0.2
+    sleep 0.1
 done; done
 
 # while ! timeout 0.2 ping -c 1 -n google.com &> /dev/null; do

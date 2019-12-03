@@ -1,6 +1,14 @@
 # Raspberry Kiosk
-# !ToDo 
-* Check if timer works.
+
+# Operations 
+```bash
+sudo systemctl <action> <service>
+sudo systemctl <stop | start | enable | disable> <ngulia-kiosk ngulia-check-network.service ngulia-check-network.timer | ngulia-spinner>
+# ngulia-kiosk: Chromium window
+# ngulia-check-network.service: Check if system has network-access every 5 min
+# ngulia-vheck-network.timer: Triggers ngulia-check-network.service
+# ngulia-spinner: Display loading spinner on screen
+```
 
 1. Copy new image to SD card
 ```bash
@@ -44,11 +52,8 @@ Observe the guide only works on linux OS.
 
 # Info about sytemd
 ```bash
-# ngulia-kiosk.service, ngulia-check-network.service, ngulia-check-network.timer requieres sudo access
+# ngulia-kiosk.service, ngulia-check-network.service, ngulia-check-network.timer, ngulia-spinner.service 
 # example: sudo systemctl start ngula-kiosk.service 
-
-# ngula-spinner is accesible from pi user and does not require sudo access
-# example: systemctl --user start ngulia-spinner.service 
 ```
 
 # Links I used developing these services 
