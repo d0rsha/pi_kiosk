@@ -5,6 +5,9 @@ export DISPLAY=$DISPLAY
 
 echo "###########################################"
 echo "# Setup kiosk.service"
+sudo systemctl stop ngulia-kiosk 
+sudo systemctl disable ngulia-kiosk
+
 cp -f scripts/kiosk.sh /home/pi/kiosk.sh
 chmod +x /home/pi/kiosk.sh
 
@@ -13,8 +16,6 @@ sudo cp -f systemd-services/ngulia-kiosk.service /lib/systemd/system/ngulia-kios
 cp -f scripts/ping.sh /home/pi/ping.sh
 chmod +x /home/pi/ping.sh
 
-sudo systemctl stop ngulia-kiosk 
-sudo systemctl disable ngulia-kiosk 
 sudo systemctl enable ngulia-kiosk 
 
 echo "###########################################"
@@ -51,13 +52,14 @@ sudo cp -f systemd-services/ngulia-spinner.service /lib/systemd/system/ngulia-sp
 
 echo "###########################################"
 echo "# Check-network.service"
+sudo systemctl stop ngulia-check-network.timer
+sudo systemctl disable ngulia-check-network.timer
+
 cp -f scripts/check-network.sh /home/pi/check-network.sh
 chmod +x /home/pi/check-network.sh
 sudo cp -f systemd-services/ngulia-check-network.service /lib/systemd/system/ngulia-check-network.service
 sudo cp -f systemd-services/ngulia-check-network.timer /lib/systemd/system/ngulia-check-network.timer
 
-sudo systemctl stop ngulia-check-network.timer
-sudo systemctl disable ngulia-check-network.timer
 sudo systemctl daemon-reload
 sudo systemctl enable ngulia-check-network.timer
 

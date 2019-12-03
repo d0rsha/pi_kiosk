@@ -13,12 +13,14 @@ sping[3]="/ Waiting for network..."
 
 while true
 do
+    echo -ne "\r"
+    echo "wget https://dashboard.projectngulia.org"
     wget -q --spider https://dashboard.projectngulia.org
 
     if [ $? -eq 0 ]; then
         break
     else
-        for x in {1..3}
+        for x in {1..3}; do
         for i in "${sping[@]}"
         do
             echo -ne "\r$i"
