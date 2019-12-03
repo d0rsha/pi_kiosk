@@ -1,17 +1,13 @@
 #!/bin/bash 
-trap '[ "$pid" ] && kill "$pid"' EXIT
 
 timeout 5 /home/pi/light-ping.sh
 RES=$?
-echo "Exit code: $RES"
+echo "<check-network.sh> Exit code: $RES"
 if [ "$RES" -eq "0" ]; then 
-    echo "Network online"
+    echo "<check-network.sh> Network online"
 else 
-    echo "Network not available"
+    echo "<check-network.sh> Network not available"
     /home/pi/spinner.sh &
     /home/pi/light-ping.sh
+    killall FBpyGIF
 fi
-
-
-pid=$!
-echo running once
