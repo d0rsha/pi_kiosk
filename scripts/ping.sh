@@ -11,10 +11,21 @@ sping[2]="| Waiting for network.. "
 sping[3]="/ Waiting for network..."
 #############
 
-while ! timeout 0.2 ping -c 1 -n google.com &> /dev/null; do
-for i in "${sping[@]}"
+while true
 do
-    echo -ne "\r$i"
-    sleep 0.2
-done; done
-printf "\n%s\n"  "Network online!"
+    wget -q --spider https://dashboard.projectngulia.org
+
+    if [ $? -eq 0 ]; then
+        break
+    else
+        for x in {1..3}
+        for i in "${sping[@]}"
+        do
+            echo -ne "\r$i"
+            sleep 0.25
+        done; done
+    fi
+done
+
+echo "<light-ping.sh> Established connection to https://dashboard.projectngulia.org"
+echo "<light-ping.sh> Network online"
