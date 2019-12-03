@@ -1,5 +1,5 @@
 [Unit]
-Description=Timer triggers ngulia-check-network daemon
+Description=Timer that triggers that triggers check network available service
 
 [Timer]
 OnBootSec=2m

@@ -27,4 +27,4 @@ echo "Open chromium to enfore first run installation and create folder-structure
 timeout 10 chromium-browser https://google.com
 
 echo "First boot ended gracefully, rebooting now..."
-sudo reboot
+# reboot

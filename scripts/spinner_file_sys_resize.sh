@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #############
 ## Spinner ##
 sping[0]="- Waiting for filesystem to resize, system will reboot shortly   "

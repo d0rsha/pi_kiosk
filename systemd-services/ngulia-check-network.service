@@ -1,8 +1,8 @@
 # system Daemon file
 [Unit]
-Description=Run 'check-network.sh'
+Description=Check if network is available
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/sudo /bin/bash /home/pi/check-network.sh
+ExecStart=/bin/bash /home/pi/check-network.sh
 

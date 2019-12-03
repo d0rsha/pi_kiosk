@@ -1,12 +1,11 @@
-# system Daemon file
+# user systemd file
+# This file should be located in ~/.config/systemd/user/ngulia-spinner.service
 [Unit]
-Description=Display spinner on screen
+Description=Display network spinner on screen
 
 [Service]
 Type=simple
 ExecStart=/bin/bash /home/pi/spinner.sh
-User=pi
-Group=pi
 
 [Install]
 WantedBy=graphical.target

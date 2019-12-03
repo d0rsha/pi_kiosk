@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -x
 export XAUTHORITY=/home/pi/.Xauthority; export DISPLAY=:0; xdotool key Return
 
