@@ -15,8 +15,8 @@ sudo systemctl enable ngulia-kiosk
 
 # Setup splash
 sudo cp -f scripts/splash.png /home/pi/splash.png
-sudo chmod +x splash.sh
-sudo ./splash.sh
+sudo chmod +x scripts/splash.sh
+sudo ./scripts/splash.sh
 
 # Setup background 
 sudo cp -f background.png /home/pi/background.png
@@ -49,5 +49,8 @@ sudo systemctl stop ngulia-check-network.timer
 sudo systemctl disable ngulia-check-network.timer
 sudo systemctl enable ngulia-check-network.timer
 
+sudo cp -f scripts/light-ping.sh /home/pi/light-ping.sh
+sudo chmod +x /home/pi/light-ping.sh
+
 # ReBoot
-sudo reboot
+#sudo reboot
