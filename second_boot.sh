@@ -20,7 +20,7 @@ sudo systemctl enable ngulia-kiosk
 echo "###########################################"
 echo "# Setup splashscreen"
 cp -f splash.png /home/pi/splash.png
-sudo chmod +x scripts/splash.sh
+chmod +x scripts/splash.sh
 sudo ./scripts/splash.sh
 
 ehco "###########################################"
@@ -31,23 +31,23 @@ pcmanfm --set-wallpaper="/home/pi/background.png"
 echo "###########################################"
 echo "# Prepare for future copies of image (Run ./before_image.sh before creating image of SD card)"
 cp -f before_image.sh /home/pi/before_image.sh
-sudo chmod +x /home/pi/before_image.sh
+chmod +x /home/pi/before_image.sh
 cp -f before_image.sh /home/pi/after_image.sh
-sudo chmod +x /home/pi/after_image.sh
+chmod +x /home/pi/after_image.sh
 
 echo "###########################################"
 echo "# Spinner.service"
 cp -f spinner/* /home/pi/Pictures/spinner/
 cp -f scripts/spinner.sh /home/pi/spinner.sh
-sudo chmod +x /home/pi/spinner.sh
-mkdir -p ~/.config/systemd/user
-cp -f systemd-services/ngulia-spinner.service ~/.config/systemd/user/ngulia-spinner.service
-systemctl --user daemon-reload
+chmod +x /home/pi/spinner.sh
+#mkdir -p ~/.config/systemd/user
+cp -f systemd-services/ngulia-spinner.service /lib/systemd/system/ngulia-spinner.service
+#systemctl --user daemon-reload
 
 echo "###########################################"
 echo "# Check-network.service"
 cp -f scripts/check-network.sh /home/pi/check-network.sh
-sudo chmod +x /home/pi/check-network.sh
+chmod +x /home/pi/check-network.sh
 sudo cp -f systemd-services/ngulia-check-network.service /lib/systemd/system/ngulia-check-network.service
 sudo cp -f systemd-services/ngulia-check-network.timer /lib/systemd/system/ngulia-check-network.timer
 
@@ -57,7 +57,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable ngulia-check-network.timer
 
 cp -f scripts/light-ping.sh /home/pi/light-ping.sh
-sudo chmod +x /home/pi/light-ping.sh
+chmod +x /home/pi/light-ping.sh
 
 echo "###########################################"
 echo "### second_boot.sh done, plz reboot pi ####"
