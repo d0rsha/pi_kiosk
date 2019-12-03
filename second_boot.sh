@@ -6,12 +6,12 @@ export DISPLAY=$DISPLAY
 echo "###########################################"
 echo "# Setup kiosk.service"
 cp -f scripts/kiosk.sh /home/pi/kiosk.sh
-sudo chmod +x /home/pi/kiosk.sh
+chmod +x /home/pi/kiosk.sh
 
 sudo cp -f systemd-services/ngulia-kiosk.service /lib/systemd/system/ngulia-kiosk.service
 
 cp -f scripts/ping.sh /home/pi/ping.sh
-sudo chmod +x /home/pi/ping.sh
+chmod +x /home/pi/ping.sh
 
 sudo systemctl stop ngulia-kiosk 
 sudo systemctl disable ngulia-kiosk 
@@ -23,8 +23,15 @@ cp -f splash.png /home/pi/splash.png
 chmod +x scripts/splash.sh
 sudo ./scripts/splash.sh
 
-ehco "###########################################"
+echo "###########################################"
 echo "# Setup background image"
+echo "### If you see Error window below saying 'Desktop manager is not active'"
+echo "#      ----------------------------------"
+echo "#      |_____________Error______________|"
+echo "#      |                                |"
+echo "#      | Desktop manager is not active  |"
+echo "#      |________________________________|"
+echo "### You can Ignore it, just press enter."
 cp -f background.png /home/pi/background.png
 pcmanfm --set-wallpaper="/home/pi/background.png"
 
@@ -40,9 +47,7 @@ echo "# Spinner.service"
 cp -f spinner/* /home/pi/Pictures/spinner/
 cp -f scripts/spinner.sh /home/pi/spinner.sh
 chmod +x /home/pi/spinner.sh
-#mkdir -p ~/.config/systemd/user
-cp -f systemd-services/ngulia-spinner.service /lib/systemd/system/ngulia-spinner.service
-#systemctl --user daemon-reload
+sudo cp -f systemd-services/ngulia-spinner.service /lib/systemd/system/ngulia-spinner.service
 
 echo "###########################################"
 echo "# Check-network.service"

@@ -4,12 +4,23 @@
 ```bash
 sudo systemctl <action> <service>
 sudo systemctl <stop | start | enable | disable> <ngulia-kiosk ngulia-check-network.service ngulia-check-network.timer | ngulia-spinner>
-# ngulia-kiosk: Chromium window
-# ngulia-check-network.service: Check if system has network-access every 5 min
-# ngulia-vheck-network.timer: Triggers ngulia-check-network.service
-# ngulia-spinner: Display loading spinner on screen
 ```
+### Services
+|                               |                                               |
+|------------------------------|------------------------------------------------|
+|**ngulia-kiosk.service**          |Chromium window |
+|**ngulia-check-network.service**  |Check if system has network-access every 5 min|
+|**ngulia-check-network.timer**    |Triggers ngulia-check-network.service|
+|**ngulia-spinner.service**        |Display loading spinner on screen|
+|                               |                                               |
 
+# Create image from SD card
+Run `before_image.sh` script before shuting down pi.  
+To copy and shrink image follow guide on: http://www.aoakley.com/articles/2015-10-09-resizing-sd-images.php  
+Observe the guide only works on linux OS.
+
+
+# Fresh installation
 1. Copy new image to SD card
 ```bash
 # From the raspberry pi
@@ -43,15 +54,9 @@ sudo ./second_boot.sh
 
 5. Enjoy
 
-## Create image from SD card
-Run `before_image.sh` script before shuting down pi.  
-To copy and shrink image follow guide on: http://www.aoakley.com/articles/2015-10-09-resizing-sd-images.php  
-Observe the guide only works on linux OS.
-
-
-
 # Info about sytemd
 ```bash
+# systemd runs in the background and is accesible from systemctl interface
 # ngulia-kiosk.service, ngulia-check-network.service, ngulia-check-network.timer, ngulia-spinner.service 
 # example: sudo systemctl start ngula-kiosk.service 
 ```

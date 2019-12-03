@@ -13,7 +13,7 @@ ExecStartPre=/usr/bin/lxterminal -t "Chromium Kiosk daemon" -e /home/pi/ping.sh
 ExecStart=/bin/bash /home/pi/kiosk.sh
 Restart=always
 RestartSec=3
-User=pi
+User=pi 
 Group=pi
 
 [Install]
