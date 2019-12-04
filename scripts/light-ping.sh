@@ -13,13 +13,13 @@ do
     fi
 
     ((seconds++))
-    if [ $seconds -eq 20 ]; then
+    if [ $seconds -eq 180 ]; then
 	echo "<ligh-ping.sh> Connection timeout $seconds seconds. Restarting network."
 	((seconds=0))
 	
 	echo "<ligh-ping.sh> Disable network interface"
 	ip link set wlan0 down
-	sleep 2
+	sleep 4
 	echo "<ligh-ping.sh> Enable network interface"
 	ip link set wlan0 up
     fi

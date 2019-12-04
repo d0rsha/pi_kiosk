@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -x
-export XAUTHORITY=/home/pi/.Xauthority; export DISPLAY=:0; xdotool key Return
+export XAUTHORITY=/home/pi/.Xauthority; export DISPLAY=:0
 
 xset s noblank
 xset s off
@@ -13,10 +13,3 @@ sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' /home/pi/.config/chromi
 sed -i 's/"exit_type":"Crashed"/"exit_type":"Normal"/' /home/pi/.config/chromium/Default/Preferences
 
 /usr/bin/chromium-browser --noerrdialogs --disable-infobars --kiosk --ignore-certificate-errors --disable-restore-session-state https://dashboard.projectngulia.org/board.html?workspace=ngulia#/live 
-
-while true 
-do
-   	sleep 10s
-	echo "Refresh!"
-	xdotool keydown ctrl+F5; xdotool keyup ctrl+F5;
-done
