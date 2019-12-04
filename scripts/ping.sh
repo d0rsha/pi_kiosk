@@ -15,7 +15,7 @@ while true
 do
     echo -ne "\r"
     echo "wget -q --spider https://dashboard.projectngulia.org"
-    if wget -q --spider https://dashboard.projectngulia.org > /dev/null; then
+    if timeout 3 wget -q --spider https://dashboard.projectngulia.org > /dev/null; then
         break
     else
         for x in {1..3}; do
