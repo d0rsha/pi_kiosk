@@ -4,9 +4,7 @@ seconds=0
 
 while true
 do
-    wget -q --spider https://dashboard.projectngulia.org
-
-    if [ $? -eq 0 ]; then
+    if wget -q --spider https://dashboard.projectngulia.org > /dev/null; then
         break
     else
         sleep 1
