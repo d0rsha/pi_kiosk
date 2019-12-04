@@ -1,4 +1,5 @@
 #!/bin/bash 
+DISPLAY=:0
 
 timeout 5 /home/pi/light-ping.sh
 RES=$?
@@ -11,6 +12,7 @@ else
     systemctl start ngulia-spinner
     ./home/pi/light-ping.sh
     systemctl stop ngulia-spinner
-    xdotool search --name " - Chromium" windowactivate %1 && sleep 0.5s && xdotool keydown ctrl+F5 && xdotool keyup ctrl+F5
+    sleep 2
+    xdotool search --name " - Chromium" windowactivate %1 && sleep 1 && xdotool keydown ctrl+F5 && xdotool keyup ctrl+F5
 fi
 

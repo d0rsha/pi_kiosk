@@ -7,7 +7,7 @@ do
     if [ $? -eq 0 ]; then
         break
     else
-        sleep 1 s
+        sleep 1
     fi
 done
 

@@ -14,8 +14,8 @@ sping[3]="/ Waiting for network..."
 while true
 do
     echo -ne "\r"
-    echo "wget https://dashboard.projectngulia.org"
-    wget -q --spider https://dashboard.projectngulia.org
+    echo "timeout 2s wget https://dashboard.projectngulia.org"
+    timeout 2 wget -q --spider https://dashboard.projectngulia.org
 
     if [ $? -eq 0 ]; then
         break
