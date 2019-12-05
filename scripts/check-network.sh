@@ -13,6 +13,7 @@ else
     echo "<check-network.sh> Network not available"
     systemctl start ngulia-spinner
     ./home/pi/light-ping.sh
+    echo "<check-network.sh> Network back online!"
     systemctl stop ngulia-spinner
 
     sleep 2

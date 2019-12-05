@@ -24,4 +24,3 @@ do
 done
 
 echo "<light-ping.sh> Established connection to https://dashboard.projectngulia.org"
-echo "<light-ping.sh> Network back online"
