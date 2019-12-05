@@ -24,4 +24,3 @@ do
 done
 
 echo "<w8-network.sh> Established connection to https://dashboard.projectngulia.org"
-echo "<w8-network.sh> Network back online"

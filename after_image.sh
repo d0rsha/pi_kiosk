@@ -11,4 +11,5 @@ sudo raspi-config --expand-rootfs
 sudo sed -i '/.\/home\/pi\/after_image.sh/d' /etc/xdg/lxsession/LXDE-pi/autostart 
 
 echo "Everyday boot ended gracefully, rebooting..."
+sleep 1
 sudo reboot

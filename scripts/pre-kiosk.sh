@@ -19,11 +19,12 @@ echo "Network is up!"
 echo "Checking connection to server..."
 echo "Please hold on"
 
+i=0
 while true
 do
-    echo -ne "\r"
-    echo "wget -q --spider https://dashboard.projectngulia.org"
-    if wget --quiet --timeout=4 --tries=2 --spider https://dashboard.projectngulia.org > /dev/null; then
+    i=$(expr $i + 1)
+    echo -ne "\r <Test-ping: $i> wget -q --spider https://dashboard.projectngulia.org"
+    if wget --quiet --timeout=10 --tries=4 --spider https://dashboard.projectngulia.org > /dev/null; then
         break
     fi
 done
@@ -32,4 +33,5 @@ echo "<w8-network.sh> Established connection to https://dashboard.projectngulia.
 echo "<w8-network.sh> Network online"
 echo "Opening browser..."
 echo "Please hold on"
+sleep 1
 echo "-------------[ Chromium kiosk ]------------" 
