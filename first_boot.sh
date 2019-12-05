@@ -22,6 +22,10 @@ apt list xdotool
 sudo apt-get install -y xdotool
 apt list chromium-browser
 sudo apt-get install -y chromium-browser
+# FBpyGIF
+sudo apt install libjpeg62-turbo-dev libfreetype6-dev libwebp-dev -y
+sudo apt install -y python3-pip
+/usr/bin/yes | sudo pip3 install fbpygif
 
 echo "Open chromium to enfore first run installation and create folder-structure needed for scripts"
 timeout 10 chromium-browser https://google.com
