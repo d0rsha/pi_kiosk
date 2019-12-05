@@ -28,8 +28,8 @@ do
     fi
 done
 
-echo "<light-ping.sh> Established connection to https://dashboard.projectngulia.org"
-echo "<light-ping.sh> Network online"
+echo "<w8-network.sh> Established connection to https://dashboard.projectngulia.org"
+echo "<w8-network.sh> Network online"
 echo "Opening browser..."
 echo "Please hold on"
 echo "-------------[ Chromium kiosk ]------------" 

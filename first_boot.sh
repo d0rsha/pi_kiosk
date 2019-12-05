@@ -26,6 +26,14 @@ sudo apt-get install -y chromium-browser
 echo "Open chromium to enfore first run installation and create folder-structure needed for scripts"
 timeout 10 chromium-browser https://google.com
 
+echo "###########################################"
+echo "# allow-hotplug wlan0"
+if cat /etc/network/interfaces | grep "allow-hotplug wlan0" > /dev/null; then
+    echo "Already enabled"
+else 
+    echo "allow-hotplug wlan0" >> /etc/network/interfaces
+fi
+
 echo "First boot ended gracefully, rebooting now..."
 echo "###########################################"
 echo "## first.sh done, plz reboot your system ##"

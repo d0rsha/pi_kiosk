@@ -2,8 +2,8 @@
 export XAUTHORITY=/home/pi/.Xauthority
 export DISPLAY=:0
 
-echo "<check-network.sh> timeout 5s /home/pi/light-ping.sh"
-timeout 5 /home/pi/light-ping.sh
+echo "<check-network.sh> timeout 5s /home/pi/w8-network.sh"
+timeout 5 /home/pi/w8-network.sh
 RES=$?
 # echo "<check-network.sh> Exit code: $RES"
 if [ "$RES" -eq "0" ]; then 
@@ -12,7 +12,7 @@ if [ "$RES" -eq "0" ]; then
 else 
     echo "<check-network.sh> Network not available"
     systemctl start ngulia-spinner
-    ./home/pi/light-ping.sh
+    ./home/pi/w8-network.sh
     systemctl stop ngulia-spinner
 
     sleep 2

@@ -13,8 +13,8 @@ chmod +x /home/pi/kiosk.sh
 
 sudo cp -f systemd-services/ngulia-kiosk.service /lib/systemd/system/ngulia-kiosk.service
 
-cp -f scripts/ping.sh /home/pi/ping.sh
-chmod +x /home/pi/ping.sh
+cp -f scripts/pre-kiosk.sh /home/pi/pre-kiosk.sh
+chmod +x /home/pi/pre-kiosk.sh
 
 sudo systemctl enable ngulia-kiosk 
 
@@ -63,8 +63,8 @@ sudo cp -f systemd-services/ngulia-check-network.timer /lib/systemd/system/nguli
 sudo systemctl daemon-reload
 sudo systemctl enable ngulia-check-network.timer
 
-cp -f scripts/light-ping.sh /home/pi/light-ping.sh
-chmod +x /home/pi/light-ping.sh
+cp -f scripts/w8-network.sh /home/pi/w8-network.sh
+chmod +x /home/pi/w8-network.sh
 
 echo "###########################################"
 echo "### second_boot.sh done, plz reboot pi ####"
