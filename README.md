@@ -14,6 +14,15 @@ sudo systemctl <stop | start | enable | disable> <ngulia-kiosk ngulia-check-netw
 |**ngulia-spinner.service**        |Display loading spinner on screen|
 |                               |                                               |
 
+### Actions 
+|                               |                                               |
+|-------------------------------|------------------------------------------------|
+|**stop**                       | Stop the service if it's running |
+|**start**                      | Start the service if it's not running |
+|**disable**                    | Disable the service (service will no longer be triggerd by system events |
+|**enable**                     | Enable the service, the service will now be triggered by system event |
+|                               |                                               |
+
 # Create image from SD card
 Run `before_image.sh` script before shuting down pi.  
 To copy and shrink image follow guide on: http://www.aoakley.com/articles/2015-10-09-resizing-sd-images.php  

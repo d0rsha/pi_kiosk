@@ -23,6 +23,7 @@ echo "# Setup splashscreen"
 cp -f splash.png /home/pi/splash.png
 chmod +x scripts/splash.sh
 sudo ./scripts/splash.sh
+echo " "
 
 echo "###########################################"
 echo "# Setup background image"
@@ -35,20 +36,24 @@ echo "#      |________________________________|"
 echo "### You can Ignore it, just press enter."
 cp -f background.png /home/pi/background.png
 pcmanfm --set-wallpaper="/home/pi/background.png"
+echo " "
 
 echo "###########################################"
-echo "# Prepare for future copies of image (Run ./before_image.sh before creating image of SD card)"
+echo "# Prepare for future copies of image (Run sudo ./before_image.sh before creating image of SD card)"
 cp -f before_image.sh /home/pi/before_image.sh
 chmod +x /home/pi/before_image.sh
 cp -f after_image.sh /home/pi/after_image.sh
 chmod +x /home/pi/after_image.sh
+echo " "
 
 echo "###########################################"
 echo "# Spinner.service"
+mkdir -p /home/pi/Pictures/spinner
 cp -f spinner/* /home/pi/Pictures/spinner/
 cp -f scripts/spinner.sh /home/pi/spinner.sh
 chmod +x /home/pi/spinner.sh
 sudo cp -f systemd-services/ngulia-spinner.service /lib/systemd/system/ngulia-spinner.service
+echo " "
 
 echo "###########################################"
 echo "# Check-network.service"
@@ -65,6 +70,7 @@ sudo systemctl enable ngulia-check-network.timer
 
 cp -f scripts/w8-network.sh /home/pi/w8-network.sh
 chmod +x /home/pi/w8-network.sh
+echo " "
 
 echo "###########################################"
 echo "### second_boot.sh done, plz reboot pi ####"
