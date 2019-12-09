@@ -2,10 +2,10 @@
 export XAUTHORITY=/home/pi/.Xauthority
 export DISPLAY=:0
 
-echo "<check-network.sh> timeout 10s /home/pi/w8-network.sh"
+#echo "<check-network.sh> timeout 10s /home/pi/w8-network.sh"
 
 if timeout 20 wget -q --spider https://dashboard.projectngulia.org > /dev/null; then
-    echo "<check-network.sh> Network online"
+    #echo "<check-network.sh> Network online"
     systemctl stop ngulia-spinner
 else 
     echo "<check-network.sh> Network not available"
@@ -16,7 +16,7 @@ else
 
     sleep 2
 
-    echo "<check-network.sh> search Chromium window, activate && refresh"
+    #echo "<check-network.sh> search Chromium window, activate && refresh"
     set +e
     # supress err mess, bug: xdotool search fails on first try
     xdotool search --name " - Chromium" 2> /dev/null
@@ -24,4 +24,4 @@ else
     set -e
 fi
 
-echo "<check-network.sh> Ended gracefully"
+#echo "<check-network.sh> Ended gracefully"
