@@ -2,8 +2,8 @@
 Description=Timer that triggers that triggers check network available service
 
 [Timer]
-OnBootSec=5m
-OnUnitActiveSec=1m
+OnBootSec=10m
+OnUnitActiveSec=2m
 unit=ngulia-check-network.service
 
 [Install]

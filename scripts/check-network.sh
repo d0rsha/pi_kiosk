@@ -2,11 +2,9 @@
 export XAUTHORITY=/home/pi/.Xauthority
 export DISPLAY=:0
 
-echo "<check-network.sh> timeout 5s /home/pi/w8-network.sh"
-timeout 5 /home/pi/w8-network.sh
-RES=$?
-# echo "<check-network.sh> Exit code: $RES"
-if [ "$RES" -eq "0" ]; then 
+echo "<check-network.sh> timeout 10s /home/pi/w8-network.sh"
+
+if timeout 20 wget -q --spider https://dashboard.projectngulia.org > /dev/null; then
     echo "<check-network.sh> Network online"
     systemctl stop ngulia-spinner
 else 

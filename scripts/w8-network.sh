@@ -4,7 +4,7 @@ seconds=0
 
 while true
 do
-    if timeout 10 wget -q --spider https://dashboard.projectngulia.org > /dev/null; then
+    if timeout 20 wget -q --spider https://dashboard.projectngulia.org > /dev/null; then
         break
     else
         sleep 1
