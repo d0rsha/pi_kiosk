@@ -42,7 +42,7 @@ echo "###########################################"
 echo "# Prepare for future copies of image (Run sudo ./before_image.sh before creating image of SD card)"
 cp -f before_image.sh /home/pi/before_image.sh
 chmod +x /home/pi/before_image.sh
-cp -f after_image.sh /home/pi/after_image.sh
+cp -f scripts/after_image.sh /home/pi/after_image.sh
 chmod +x /home/pi/after_image.sh
 echo " "
 
