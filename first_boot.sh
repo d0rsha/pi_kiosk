@@ -47,8 +47,17 @@ else
 fi
 echo " "
 
+echo "#####################################################"
+echo "# Always use eth0 interface name for ethernet "
+if  grep -Fxq 'net.ifnames=0' /boot/cmdline.txt > /dev/null ; then
+    echo "Switch to old naming scheme; "
+    echo "/!\ Ethernet interface should be named eth0 instead of en<MAC-ADDDRESS> after reboot /!\ "
+    sudo echo " net.ifnames=0" >> /boot/cmdline.txt
+fi
+echo " "
+
 echo "First boot ended gracefully, rebooting now..."
-echo "###########################################"
-echo "## first.sh done, plz reboot your system ##"
-echo "###########################################"
+echo "################################################"
+echo "## first_boot.sh done, plz reboot your system ##"
+echo "################################################"
 # reboot
