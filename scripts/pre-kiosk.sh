@@ -10,10 +10,11 @@ while true; do
 	echo "Interface wlan0 is up!"
 	break
     fi
-    if ifconfig enxb827eb64eb3f | grep inet > /dev/null; then
-	echo "Interface enxb827eb64eb3f is up!"
-	break
-    fi
+    # Throws error ...
+    # if ifconfig eth0 | grep inet > /dev/null; then
+	# echo "Interface eth0 is up!"
+	# break
+    # fi
 true; done
 echo "Network is up!"
 echo "Checking connection to server..."
