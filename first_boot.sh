@@ -50,8 +50,8 @@ echo " "
 echo "#####################################################"
 echo "# Always use eth0 interface name for ethernet "
 if  grep -Fxq 'net.ifnames=0' /boot/cmdline.txt > /dev/null ; then
-    echo "Switch to old naming scheme; "
-    echo "/!\ Ethernet interface should be named eth0 instead of en<MAC-ADDDRESS> after reboot /!\ "
+    echo "# Switch to old naming scheme; "
+    echo "# /!\ Ethernet interface should be named eth0 instead of en<MAC-ADDDRESS> after reboot /!\ "
     sudo echo " net.ifnames=0" >> /boot/cmdline.txt
 fi
 echo " "
