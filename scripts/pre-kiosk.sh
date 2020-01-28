@@ -6,15 +6,14 @@ xset -dpms
 echo "-------------[ Chromium kiosk ]------------" 
 echo "Waiting for WiFi/ethernet connection..."
 while true; do
-    if ifconfig wlan0 | grep inet > /dev/null; then
+    if ifconfig wlan0 | grep inet > /dev/null 2> /dev/null; then
 	echo "Interface wlan0 is up!"
 	break
     fi
-    # Throws error ...
-    # if ifconfig eth0 | grep inet > /dev/null; then
-	# echo "Interface eth0 is up!"
-	# break
-    # fi
+    if ifconfig eth0 | grep inet > /dev/null 2> /dev/null; then
+	echo "Interface eth0 is up!"
+	break
+    fi
 true; done
 echo "Network is up!"
 echo "Checking connection to server..."
