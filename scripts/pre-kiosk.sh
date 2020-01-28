@@ -14,6 +14,7 @@ while true; do
 	echo "Interface eth0 is up!"
 	break
     fi
+    sleep 1
 true; done
 echo "Network is up!"
 echo "Checking connection to server..."
